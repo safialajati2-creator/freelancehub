@@ -1,7 +1,7 @@
 # FreelanceHub
 
 <p align="center">
-  A modern freelance marketplace frontend prototype built with React, Vite, Tailwind CSS, React Router, and Framer Motion.
+  A modern two-sided freelance marketplace frontend prototype built with React, Vite, Tailwind CSS, React Router, and Framer Motion.
 </p>
 
 <p align="center">
@@ -11,15 +11,84 @@
   <img src="https://img.shields.io/badge/React_Router-7-CA4245?logo=reactrouter&logoColor=white" alt="React Router" />
 </p>
 
-<p align="center">
-  <a href="README_TR.md">Türkçe README</a>
-</p>
+<p align="center"><a href="README_TR.md">Türkçe README</a></p>
 
 ## Overview
 
-**FreelanceHub** is a two-sided freelance marketplace prototype designed around realistic client and freelancer workflows. It demonstrates project discovery, proposal management, role-based navigation, messaging, project management, earnings and payment history, profile management, and responsive UI behavior.
+**FreelanceHub** is a two-sided freelance marketplace prototype designed around two distinct role-based experiences: **Client / Job Poster** and **Freelancer**. Each role has its own navigation, workflows, management tools, and marketplace capabilities.
+
+Clients can publish and manage projects, review freelancer applications, communicate with candidates, approve or reject proposals, and manage simulated payments. Freelancers can discover opportunities, save jobs, submit proposals, track application status, manage their professional profile and services, and review earnings.
 
 > **Scope:** This is a frontend/client-side prototype. Authentication, marketplace data, messages, earnings, and payments are simulated in the browser with `localStorage`. No production backend, database, payment gateway, or secure authentication service is connected.
+
+## Product Showcase
+
+### Shared Marketplace Experience
+
+The landing experience introduces the marketplace and provides access to job discovery, search, account navigation, and role-specific tools.
+
+<p align="center"><img src="docs/images/home-dashboard.png" width="900" alt="FreelanceHub home dashboard" /></p>
+
+## Two Role-Based Experiences
+
+### Client / Job Poster
+
+The **Client** side is designed for users who want to hire freelancers. Clients can create projects, manage their posted work, review incoming proposals, communicate with applicants, approve or reject candidates, and complete a simulated payment workflow.
+
+**Client flow**  
+`Sign Up / Login → Create Project → Receive Applications → Review Proposal → Message Freelancer → Approve / Reject → Simulated Payment → Payment History`
+
+### Freelancer
+
+The **Freelancer** side focuses on discovering and managing work opportunities. Freelancers can browse projects, search and filter listings, save jobs, open project details, submit applications, track proposal status, manage services and profile information, and review earnings.
+
+**Freelancer flow**  
+`Sign Up / Login → Find Work → Save / Open Project → Submit Proposal → Track Proposal → Message Client → Approval → Earnings History`
+
+### Discover & Apply
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/find-work.png" alt="Find Work" /></td>
+<td width="50%"><img src="docs/images/job-application-modal.png" alt="Job application modal" /></td>
+</tr>
+<tr>
+<td align="center"><b>Find Work</b><br/>Search and filter available projects.</td>
+<td align="center"><b>Project Application</b><br/>Review project details and submit a proposal.</td>
+</tr>
+</table>
+
+### Save & Track Opportunities
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/saved-jobs.png" alt="Saved Jobs" /></td>
+<td width="50%"><img src="docs/images/my-proposals.png" alt="My Proposals" /></td>
+</tr>
+<tr>
+<td align="center"><b>Saved Jobs</b><br/>Keep interesting opportunities for later.</td>
+<td align="center"><b>My Proposals</b><br/>Track pending, approved, and rejected applications.</td>
+</tr>
+</table>
+
+### Freelancer Business Tools
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/freelancer-services.png" alt="Freelancer Services" /></td>
+<td width="50%"><img src="docs/images/freelancer-profile.png" alt="Freelancer Profile" /></td>
+</tr>
+<tr>
+<td align="center"><b>Services</b><br/>Create and manage freelance service offerings.</td>
+<td align="center"><b>Professional Profile</b><br/>Manage availability, skills, education, rate, and experience.</td>
+</tr>
+</table>
+
+### Earnings
+
+<p align="center"><img src="docs/images/earnings.png" width="900" alt="Freelancer earnings history" /></p>
+
+The earnings view provides a client-side record of approved and paid freelance work in the prototype.
 
 ## Core Features
 
@@ -38,14 +107,6 @@
 - Freelancer service creation and service browsing
 - Responsive UI with Tailwind CSS
 - Framer Motion animations and transitions
-
-## User Flows
-
-**Client**  
-`Sign Up / Login → Create Project → Receive Applications → Review Proposal → Message Freelancer → Approve / Reject → Simulated Payment → Payment History`
-
-**Freelancer**  
-`Sign Up / Login → Find Work → Save / Open Project → Submit Proposal → Track Proposal → Message Client → Approval → Earnings History`
 
 ## Technology Stack
 
@@ -85,34 +146,14 @@ The prototype uses browser storage to simulate backend entities including `users
 
 ```text
 freelancehub/
+├── docs/
+│   └── images/
 ├── public/
 ├── src/
 │   ├── assets/
 │   ├── components/
-│   │   ├── Footer.jsx
-│   │   ├── JobDetailsPopup.jsx
-│   │   ├── Messages.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── PaymentSidebar.jsx
-│   │   ├── ProtectedRoute.jsx
-│   │   ├── ServiceDetailsPopup.jsx
-│   │   └── Sidebar.jsx
 │   ├── pages/
-│   │   ├── CreateProject.jsx
-│   │   ├── Earnings.jsx
-│   │   ├── FindWork.jsx
-│   │   ├── Home.jsx
-│   │   ├── Login.jsx
-│   │   ├── MyAccount.jsx
-│   │   ├── MyProjects.jsx
-│   │   ├── MyProposals.jsx
-│   │   ├── MyService.jsx
-│   │   ├── Payments.jsx
-│   │   ├── Profile.jsx
-│   │   ├── SavedJobs.jsx
-│   │   └── Signup.jsx
 │   ├── utils/
-│   │   └── storage.js
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
@@ -152,7 +193,7 @@ This project focuses on frontend architecture and product workflows rather than 
 
 ## What This Project Demonstrates
 
-FreelanceHub demonstrates practical frontend development across **routing, reusable components, role-based UX, form handling, browser persistence, project and application workflows, search and filtering, responsive UI design, and state-driven interface behavior**.
+FreelanceHub demonstrates practical frontend development across **routing, reusable components, role-based UX, form handling, browser persistence, project and application workflows, search and filtering, responsive UI design, and state-driven interface behavior**. It also demonstrates how a two-sided marketplace can provide separate product experiences for clients and freelancers within one application.
 
 ## Developer
 
